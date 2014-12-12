@@ -4,9 +4,13 @@ Arduino_stepper_library
 A stepper library for Arduino. Modified from the original Arduino library.
 
 ## constructors for set up
+<<<<<<< HEAD
 
 Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2);
 
+=======
+Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2);
+>>>>>>> da6804473fe5f3ad390146385499a44bf8b5edc5
 Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4);
 
 ## speed setter method:
