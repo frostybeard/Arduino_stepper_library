@@ -157,7 +157,6 @@ void Stepper::stepBackward(int steps_to_move)
 
         if (this->step_number == 0) {
           this->step_number = this->number_of_steps;
-          Serial.println(F("step_number = 0 "));
       }
       steps_left--;
       // step the motor to step number 0, 1, 2, or 3:
