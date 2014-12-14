@@ -51,6 +51,7 @@ class Stepper {
     // constructors:
     Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2);
     Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4);
+    Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4, int use_half_step);
 
     // speed setter method:
     void setSpeed(long whatSpeed);
@@ -59,11 +60,17 @@ class Stepper {
     void stepForward(int steps_to_move);
     void stepBackward(int steps_to_move);
     void stopMotor(void);
+    void setHalfStep(int half_step);
+    int getHalfStep(void);
 
     int version(void);
 
   private:
     void stepMotor(int this_step);
+    void stepFullStep4pin(int thisStep);
+    void stepHalfStep4pin(int thisStep);
+    void stepFullStep2pin(int thisStep);
+
     
     int direction;        // Direction of rotation
     int speed;          // Speed in RPMs
@@ -71,7 +78,8 @@ class Stepper {
     int number_of_steps;      // total number of steps this motor can take
     int pin_count;        // whether you're driving the motor with 2 or 4 pins
     int step_number;        // which step the motor is on
-    
+    int use_half_step;      // use half steps?
+
     // motor pin numbers:
     int motor_pin_1;
     int motor_pin_2;
@@ -82,4 +90,5 @@ class Stepper {
 };
 
 #endif
+
 

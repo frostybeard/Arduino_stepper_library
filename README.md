@@ -28,3 +28,11 @@ void stepBackward(int steps_to_move);
 
 void stopMotor(void);
 - shuts down pins to save energy and keep things cool.
+
+## half-step setter/getter method:
+
+void setHalfStep(int half_step);
+- sets half-step mode on/off
+
+int getHalfStep(void);
+- returns current half-step mode
